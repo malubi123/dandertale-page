@@ -1,0 +1,436 @@
+@font-face {
+font-family: 'DeterminationMono';
+src: url('https://frontenddeveloper-gabriel.github.io/meu-portfolio/Determination%20Mono.ttf') format('truetype'), 
+url('https://frontenddeveloper-gabriel.github.io/meu-portfolio/Determination%20Mono.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+
+}
+
+
+@font-face {
+font-family: 'poland';
+src: url('GohuFont-Powerline.ttf') format('truetype'), 
+url('GohuFont-Powerline.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+
+}
+
+
+@font-face {
+font-family: 'undertale';
+src: url('https://db.onlinewebfonts.com/t/ecffd4f56875866a50c50033917a3df1.woff2') format('woff2'), 
+url('https://db.onlinewebfonts.com/t/ecffd4f56875866a50c50033917a3df1.woff2') format('woff2');
+font-weight: normal;
+font-style: normal;
+
+}
+
+p {
+
+font-family: 'DeterminationMono';
+
+color: #fff;
+}
+
+poland {
+
+font-family: 'DeterminationMono', 'poland', sans-serif;
+
+}
+
+ ver{
+  font-family: 'undertale';
+  color: #ffffffa9;
+   font-size: 14px;
+ }
+
+size w1 {
+font-size: 1rem;
+    
+}
+
+size w1l5 {
+font-size: 1.5rem;
+    
+}
+
+size w2 {
+font-size: 2rem;
+    
+}
+
+size w2l5 {
+font-size: 2.5rem;
+    
+}
+
+size w3 {
+font-size: 3rem;
+    
+}
+
+size w3l5 {
+font-size: 3.5rem;
+    
+}
+
+size w4 {
+font-size: 4rem;
+    
+}
+
+
+body { 
+    background-color: black;
+
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+ image-rendering: pixelated;
+background-image: url(swiatlo.png);
+  line-height: 1.6;
+
+
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+}
+
+.galeria {
+  display: flex;           /* ustawiamy flex, bo łatwiej kontrolować */
+  flex-wrap: nowrap;       /* 1 linia, bez zawijania */
+  gap: 0;                  /* zero odstępów między obrazkami */
+  font-size: 0;            /* usuwa niewidzialne spacje */
+  justify-content: center; /* wyśrodkujemy całość */
+}
+
+.galeria :hover {
+
+scale:1.04;
+}
+
+.galeria2 {
+  display: flex;           /* ustawiamy flex, bo łatwiej kontrolować */
+  flex-wrap: nowrap;       /* 1 linia, bez zawijania */
+  gap: 0;                  /* zero odstępów między obrazkami */
+  font-size: 0;            /* usuwa niewidzialne spacje */
+  justify-content: center; /* wyśrodkujemy całość */
+
+}
+
+.galeria img {
+  width: 80px;             /* ustalamy stałą szerokość */
+  height: auto;
+  display: block;          /* usuwa baseline gap */
+  margin: 0;               /* brak marginesów */
+  padding: 0;
+}
+.film {
+  display: flex;           /* ustawiamy flex, bo łatwiej kontrolować */
+  flex-wrap: nowrap;       /* 1 linia, bez zawijania */
+  gap: 0;                  /* zero odstępów między obrazkami */
+  font-size: 0;            /* usuwa niewidzialne spacje */
+  justify-content: center; /* wyśrodkujemy całość */
+
+}
+.film iframe{
+  display: flex;           /* ustawiamy flex, bo łatwiej kontrolować */
+  flex-wrap: nowrap;       /* 1 linia, bez zawijania */
+  gap: 0;                  /* zero odstępów między obrazkami */
+  font-size: 0;            /* usuwa niewidzialne spacje */
+  justify-content: center; /* wyśrodkujemy całość */
+   border: 4px solid #b9f0ff; /* deltarune'owy neon */
+  background-color: black;
+  padding: 0;
+  box-shadow:
+    0 0 4px #00ccff,
+    0 0 10px #d3f6ff,
+    0 0 20px #93e9ff;
+  
+  outline: none;
+  border-radius: 2px; /* delikatne zaokrąglenie */
+  filter: contrast(120%) saturate(140%);
+
+}
+.film iframe:hover {
+scale: 1.03;
+}
+
+
+
+
+
+     .btn-wrapper {
+      position: relative;
+      width: 150px; /* dopasuj do rozmiaru border.png */
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .btn-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      top: 15px;
+      left: 10px;
+    }
+
+    .btn-text {
+      width: auto;
+      height: 20px;
+      top: 15px;
+      left: 40px;
+    }
+
+    .btn-border {
+      z-index: 1;
+    }
+
+    .btn-icon,
+    .btn-text {
+      z-index: 2;
+    }
+
+    .btn-wrapper:hover .btn-border {
+       content: url("border-hover.png");
+    }
+
+        .btn-wrapper:hover .btn-text {
+       content: url("text-hover.png");
+    }
+
+            .btn-wrapper:hover .btn-icon {
+       content: url("icon-hover.png");
+    }
+
+
+
+
+
+
+         .btn-wrapper2 {
+      position: relative;
+      width: 150px; /* dopasuj do rozmiaru border.png */
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .btn-wrapper2 img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+
+
+    
+    .btn-wrapper2:hover .btn-border {
+       content: url("border-hover.png");
+    }
+
+        .btn-wrapper2:hover .btn-text {
+       content: url("text2-hover.png");
+    }
+
+            .btn-wrapper2:hover .btn-icon {
+       content: url("icon-hover.png");
+    }
+    
+
+
+
+
+    .decoration {
+  position: absolute;
+  z-index: -1; /* pod wszystkim */
+    user-select: none;
+      pointer-events: none;
+        image-rendering: pixelated;  /* ważne: zachowuje twarde piksele */
+  width: auto;                /* sztucznie powiększamy */
+  height: auto;
+    }
+
+     n {
+        	
+  visibility: hidden;
+  z-index: -1; /* pod wszystkim */
+    user-select: none;
+      pointer-events: none;
+     }
+
+
+     
+     ralsi:active img {
+      content: url("ralsi dansing 2.png");
+
+     }
+
+          myszka:active img {
+      content: url("myszka2.png");
+
+     }
+
+
+    /* Warstwa na cały ekran */
+    .pollen-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* żeby nie przeszkadzało w klikaniu */
+      z-index: 0; /* umieść za innymi treściami */
+    }
+
+    .pollen {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: float linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+
+
+    @keyframes zmienTlo {
+  0%   { background-image: url("ozdobaanimated1.png"); }
+  25%  { background-image: url("ozdobaanimated2.png"); }
+  50%  { background-image: url("ozdobaanimated1.png"); }
+  75% { background-image: url("ozdobaanimated4.png"); }
+  100% { background-image: url("ozdobaanimated1.png"); }
+}
+     
+    redblock{
+      width: 10000px;
+      height: 70px;
+      background-color: rgb(238, 93, 93);
+
+        background-color: rgb(238, 93, 93);
+
+  border: 4px solid rgb(255, 102, 102);
+  border-radius: 2px;
+
+  box-shadow: 0 0 10px rgb(255, 23, 23);
+  text-align: center;
+
+    }
+
+
+        redblock p{
+  color: rgb(255, 237, 237);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+    transform: translate(20px, 15px); /* x, y */
+
+    }
+
+
+            redblock img{
+  color: rgb(255, 237, 237);
+
+    scale: 1.4;
+
+
+    }
+
+
+    .wavy-underline {
+  text-decoration: underline dashed rgb(104, 23, 23);
+  text-decoration-thickness: 2px;
+    position: absolute;
+    user-select: none;
+      pointer-events: none;
+        image-rendering: pixelated;  /* ważne: zachowuje twarde piksele */
+  
+}
+
+
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto; /* centrowanie */
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.1); /* przezroczyste tło */
+  color: white;
+  font-family: 'DeterminationMono';
+  box-shadow: 0 0 10px #00ccff;
+}
+
+th, td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #222;
+}
+
+td {
+  background-color: #111;
+}
+
+
+td * {
+  max-width: 100%;         /* nie pozwala dzieciom przekroczyć szerokości */
+  box-sizing: border-box;  /* poprawne obliczanie szerokości z paddingiem */
+  display: inline-block;   /* by elementy układały się w rządach */
+}
+
+
+.aktualizacja:hover img {
+  content: url("aktualizacja.png");
+ scale: 26.3;
+ transform: translateY(-45px);
+  transform: translateX(10px);
+  image-rendering: pixelated;
+}
+
+.aktualizacjav2:hover img {
+  content: url("aktualizacjadov2 .png");
+ scale: 26.3;
+ transform: translateY(-45px);
+  transform: translateX(10px);
+  image-rendering: pixelated;
+}
+
+
+
+.aktualizacjav4:hover img {
+  content: url("aktualizacjadov4.png");
+ scale: 26.3;
+ transform: translateY(-45px);
+  transform: translateX(10px);
+  image-rendering: pixelated;
+}
+

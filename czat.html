@@ -1,0 +1,187 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tytuł strony</title>
+  <style>
+        @font-face {
+          font-family: "DeterminationMono";
+          src: url("https://frontenddeveloper-gabriel.github.io/meu-portfolio/Determination%20Mono.ttf") format("truetype");
+          font-weight: normal;
+          font-style: normal;
+        }
+        p {
+          font-family: "DeterminationMono";
+          color: #fff;
+        }
+                h1 {
+          font-family: "DeterminationMono";
+          color: #fff;
+        }
+size w1 {
+font-size: 1rem;
+    
+}
+
+size w1l5 {
+font-size: 1.5rem;
+    
+}
+
+size w2 {
+font-size: 2rem;
+    
+}
+
+size w2l5 {
+font-size: 2.5rem;
+    
+}
+
+size w3 {
+font-size: 3rem;
+    
+}
+
+size w3l5 {
+font-size: 3.5rem;
+    
+}
+
+size w4 {
+font-size: 4rem;
+    
+}
+  n {
+        	
+  visibility: hidden;
+  z-index: -1; /* pod wszystkim */
+    user-select: none;
+      pointer-events: none;
+     }
+
+
+      </style>
+</head>
+  <div id="custom-cursor" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 32px; height: 32px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 9999;
+  scale: 0.5;
+  zoom: 2;
+  image-rendering: pixelated;
+"></div>
+
+<p style="position: fixed;  top: 2;"><size><w2l5>   <n>..</n>czat</w2l5></size></p> <br><br> <p><size><w1>niestety jeszcze nie dostępny</w1></size></p>
+
+<script>(function(){
+  const cursorMap = {
+    'default': 'cursors/default.png',
+    'pointer': 'cursors/pointer.png',
+    'text': 'cursors/text.png',
+    'crosshair': 'cursors/crosshair.png',
+    'wait': 'cursors/wait.png',
+    'move': 'cursors/move.png',
+    'not-allowed': 'cursors/not-allowed.png'
+  };
+
+  const cursorEl = document.getElementById('custom-cursor');
+  if (!cursorEl) {
+    console.error('Brak elementu #custom-cursor w DOM!');
+    return;
+  }
+
+  // styl żeby kursor nie blokował zdarzeń
+  cursorEl.style.pointerEvents = 'none';
+  document.body.style.cursor = 'none';
+
+  function isInIframeElement(el) {
+    while (el) {
+      if (el.tagName && el.tagName.toLowerCase() === 'iframe') return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function isNearIframe(x, y, margin = 15) {
+    const iframes = document.querySelectorAll('iframe');
+    for (let iframe of iframes) {
+      const rect = iframe.getBoundingClientRect();
+      if (
+        x >= rect.left - margin &&
+        x <= rect.right + margin &&
+        y >= rect.top - margin &&
+        y <= rect.bottom + margin
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  let lastType = null;
+  let lastPointerEl = null;
+  let idleTimer = null;
+  const idleDelay = 2000;
+
+  function hideCursor(){
+    cursorEl.style.display = 'none';
+  }
+  function showCursor(){
+    cursorEl.style.display = 'block';
+  }
+  function resetIdleTimer(){
+    showCursor();
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(hideCursor, idleDelay);
+  }
+
+  document.addEventListener('mousemove', e => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    cursorEl.style.transform = `translate(${x}px, ${y}px)`;
+
+    const el = document.elementFromPoint(x, y);
+    if (!el) return;
+
+    if (isInIframeElement(el)) {
+      hideCursor();
+      return;
+    }
+
+    // jeśli blisko iframe, nie resetuj timera bezczynności zbyt często
+    if (!isNearIframe(x, y, 15)) {
+      resetIdleTimer();
+    } else {
+      // blisko iframe – pozwól timerowi działać bez odświeżania
+    }
+
+    let computedCursor = getComputedStyle(el).cursor;
+    if (computedCursor === 'auto') computedCursor = 'default';
+
+    if (computedCursor !== lastType) {
+      lastType = computedCursor;
+      cursorEl.style.backgroundImage = `url(${cursorMap[computedCursor] || cursorMap.default})`;
+    }
+
+    if (computedCursor === 'pointer') {
+      if (lastPointerEl !== el) {
+        if (lastPointerEl) lastPointerEl.classList.remove('hide-cursor');
+        lastPointerEl = el;
+        lastPointerEl.classList.add('hide-cursor');
+      }
+    } else {
+      if (lastPointerEl) {
+        lastPointerEl.classList.remove('hide-cursor');
+        lastPointerEl = null;
+      }
+    }
+  });
+
+})();
+
+</script>
