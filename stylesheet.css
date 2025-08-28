@@ -434,3 +434,10 @@ td * {
   image-rendering: pixelated;
 }
 
+.aktualizacjav5:hover img {
+  content: url("aktualizacjadov5.png");
+ scale: 26.3;
+ transform: translateY(-45px);
+  transform: translateX(10px);
+  image-rendering: pixelated;
+}
